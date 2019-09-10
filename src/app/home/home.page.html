@@ -1,0 +1,68 @@
+<ion-content>
+    <ion-grid *ngIf="categoriaSeleccionada===''">
+        <ion-row>
+            <ion-col>
+                <div *ngFor="let categoria of categorias">
+                    <span *ngIf="categoria.estado">
+                        <img (click)="cambiarSeleccion(categoria.nombre)" [src]="categoria.imagen">
+                    </span>
+                </div>
+            </ion-col>
+            <ion-col>
+                <div *ngFor="let categoria of categorias">
+                    <span *ngIf="!categoria.estado">
+                        <img (click)="cambiarSeleccion(categoria.nombre)" [src]="categoria.imagen">
+                    </span>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <span *ngIf="categoriaSeleccionada==='playa'">
+        <ion-card-header>
+             <ion-button (click)="cambiarSeleccion('')"  color="danger">Atras</ion-button>
+        </ion-card-header>
+        <div *ngFor="let playa of playas" >
+            <dl>
+                <dt><h2>{{playa.nombre}}</h2></dt>
+                <dt><img [src]="playa.imagen" alt=""></dt>
+                <dt>{{playa.descripcion}}</dt>
+            </dl>
+        </div>
+    </span>
+    <span *ngIf="categoriaSeleccionada==='comida'">
+        <ion-card-header>
+            <ion-button (click)="cambiarSeleccion('')"  color="danger">Atras</ion-button>
+        </ion-card-header>
+        <div *ngFor="let comida of comidas" >
+            <dl>
+                <dt><h2>{{comida.nombre}}</h2></dt>
+                <dt><img [src]="comida.imagen" alt=""></dt>
+                <dt>{{comida.descripcion}}</dt>
+            </dl>
+        </div>
+    </span>
+    <span *ngIf="categoriaSeleccionada==='bar'">
+        <ion-card-header>
+            <ion-button (click)="cambiarSeleccion('')"  color="danger">Atras</ion-button>
+        </ion-card-header>       
+        <div *ngFor="let bar of bares" >
+            <dl>
+                <dt><h2>{{bar.nombre}}</h2></dt>
+                <dt><img [src]="bar.imagen" alt=""></dt>
+                <dt>{{bar.descripcion}}</dt>
+            </dl>
+        </div>
+    </span>
+    <span *ngIf="categoriaSeleccionada==='tendencia'">
+        <ion-card-header>
+            <ion-button (click)="cambiarSeleccion('')"  color="danger">Atras</ion-button>
+        </ion-card-header>            
+        <div *ngFor="let tendencia of tendencias" >
+            <dl>
+                <dt><h2>{{tendencia.nombre}}</h2></dt>
+                <dt><img [src]="tendencia.imagen" alt=""></dt>
+                <dt>{{tendencia.descripcion}}</dt>
+            </dl>
+        </div>
+    </span>
+</ion-content>

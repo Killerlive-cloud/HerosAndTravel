@@ -1,0 +1,19 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>superpowers</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ul *ngFor="let superheroes of superHeroes.members">
+        <span *ngIf="superheroes.age > 30">
+        <li>
+            {{superheroes.name}}
+        </li>
+        <li>
+            {{superheroes.powers}}
+        </li>
+
+      </span>
+    </ul>
+
+</ion-content>

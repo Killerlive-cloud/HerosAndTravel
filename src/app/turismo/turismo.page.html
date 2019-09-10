@@ -1,0 +1,8 @@
+<ion-content>
+    <ion-card *ngFor="let sitio of sitios">
+        <ion-card-title>{{sitio.nombre}}</ion-card-title>
+        <img [src]="sitio.imagen">
+        <ion-card>{{sitio.descripcion}}</ion-card>
+    </ion-card>
+
+</ion-content>
